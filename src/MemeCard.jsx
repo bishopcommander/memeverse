@@ -1,19 +1,55 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+import { motion, useMotionValue, useTransform } from "framer-motion";
+>>>>>>> 476de4a (Updated project with new animations)
 
 export default function MemeCard({
   meme,
   caption,
   onLike,
   onSkip,
+<<<<<<< HEAD
   onDownload,
   onSave
 }) {
   // ✅ Check if meme is already saved
+=======
+  onSave,
+  onDownload
+}) {
+  const x = useMotionValue(0);
+  const rotate = useTransform(x, [-200, 200], [-15, 15]);
+
+  const handleDragEnd = (_, info) => {
+    if (info.offset.x > 120) {
+      onLike();
+    } else if (info.offset.x < -120) {
+      onSkip();
+    }
+  };
+
+>>>>>>> 476de4a (Updated project with new animations)
   const savedMemes = JSON.parse(localStorage.getItem("likedMemes")) || [];
   const isSaved = savedMemes.some((m) => m.url === meme.url);
 
   return (
+<<<<<<< HEAD
     <div className="card">
+=======
+    <motion.div
+      key={meme.url}
+      className="card"
+      style={{ x, rotate }}
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={handleDragEnd}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0 }}
+      whileTap={{ scale: 1.05 }}
+    >
+>>>>>>> 476de4a (Updated project with new animations)
       <h2>{meme.title}</h2>
 
       <img src={meme.url} alt="meme" />
@@ -21,10 +57,15 @@ export default function MemeCard({
       {caption && <p className="caption">{caption}</p>}
 
       <div className="actions">
+<<<<<<< HEAD
         <button onClick={onLike}>Funny 😂</button>
         <button onClick={onSkip}>Trash 🗑️</button>
 
         {/* ✅ DYNAMIC SAVE BUTTON */}
+=======
+        <button onClick={onLike}>❤️</button>
+        <button onClick={onSkip}>🗑️</button>
+>>>>>>> 476de4a (Updated project with new animations)
         <button
           onClick={onSave}
           style={{
@@ -37,8 +78,16 @@ export default function MemeCard({
       </div>
 
       <button className="download" onClick={onDownload}>
+<<<<<<< HEAD
         Download Meme ⬇️
       </button>
     </div>
   );
 }   
+=======
+        ⬇️ Download
+      </button>
+    </motion.div>
+  );
+}
+>>>>>>> 476de4a (Updated project with new animations)

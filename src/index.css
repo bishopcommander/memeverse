@@ -443,4 +443,33 @@ body.light .toast {
     opacity: 1;
     transform: scale(1);
   }
+<<<<<<< HEAD
+=======
+}
+.card {
+  max-width: 400px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 20px;
+  background: #1e1e1e;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.2s;
+  user-select: none;
+  cursor: grab;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+>>>>>>> 476de4a (Updated project with new animations)
 }
