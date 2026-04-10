@@ -1,20 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import { motion, useMotionValue, useTransform } from "framer-motion";
->>>>>>> 476de4a (Updated project with new animations)
 
 export default function MemeCard({
   meme,
   caption,
   onLike,
   onSkip,
-<<<<<<< HEAD
-  onDownload,
-  onSave
-}) {
-  // ✅ Check if meme is already saved
-=======
   onSave,
   onDownload
 }) {
@@ -29,14 +20,10 @@ export default function MemeCard({
     }
   };
 
->>>>>>> 476de4a (Updated project with new animations)
   const savedMemes = JSON.parse(localStorage.getItem("likedMemes")) || [];
   const isSaved = savedMemes.some((m) => m.url === meme.url);
 
   return (
-<<<<<<< HEAD
-    <div className="card">
-=======
     <motion.div
       key={meme.url}
       className="card"
@@ -49,7 +36,6 @@ export default function MemeCard({
       exit={{ opacity: 0 }}
       whileTap={{ scale: 1.05 }}
     >
->>>>>>> 476de4a (Updated project with new animations)
       <h2>{meme.title}</h2>
 
       <img src={meme.url} alt="meme" />
@@ -57,15 +43,8 @@ export default function MemeCard({
       {caption && <p className="caption">{caption}</p>}
 
       <div className="actions">
-<<<<<<< HEAD
-        <button onClick={onLike}>Funny 😂</button>
-        <button onClick={onSkip}>Trash 🗑️</button>
-
-        {/* ✅ DYNAMIC SAVE BUTTON */}
-=======
         <button onClick={onLike}>❤️</button>
         <button onClick={onSkip}>🗑️</button>
->>>>>>> 476de4a (Updated project with new animations)
         <button
           onClick={onSave}
           style={{
@@ -78,16 +57,8 @@ export default function MemeCard({
       </div>
 
       <button className="download" onClick={onDownload}>
-<<<<<<< HEAD
-        Download Meme ⬇️
-      </button>
-    </div>
-  );
-}   
-=======
         ⬇️ Download
       </button>
     </motion.div>
   );
 }
->>>>>>> 476de4a (Updated project with new animations)
