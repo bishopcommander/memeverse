@@ -10,15 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
+
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-=======
+    "react-dom": "^19.2.4",
     "framer-motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-swipeable": "^7.0.2"
->>>>>>> 476de4a (Updated project with new animations)
+
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
